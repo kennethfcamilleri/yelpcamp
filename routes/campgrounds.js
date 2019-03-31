@@ -11,7 +11,7 @@ router.get("/campgrounds", function (req,res) {
         if (err) {
             console.log("Something went wrong..");
         } else {
-            res.render("campgrounds/index", {campgrounds: allCampgrounds});
+            res.render("campgrounds/index", {campgrounds: allCampgrounds, page: 'campgrounds'});
         }
     });
 });
