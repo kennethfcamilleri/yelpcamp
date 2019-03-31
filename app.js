@@ -16,7 +16,11 @@ var commentRoutes    = require("./routes/comments"),
 
 // seedDB(); // seed the database
 
-mongoose.connect("mongodb://localhost/yelp_camp",{ useNewUrlParser: true });
+
+// DATABASE CONNECTION
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(url,{ useNewUrlParser: true });
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
